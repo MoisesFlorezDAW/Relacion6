@@ -1,0 +1,116 @@
+@charset "UTF8";
+
+body {
+    background-color: rgb(124, 50, 173);
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("./pexels-josué-fernando-flores-10343852.jpg "); /*Imagen de fondo*/
+    background-repeat: no-repeat;    
+    background-size: cover;          
+    background-position: center;     
+    background-attachment: fixed;    
+}
+
+#documento{
+    margin: 0 auto;
+    background-color: #f5f7f8;
+    width: 700px;
+    border: 3px solid black;
+    
+}
+#cabecera{
+    background-color: #14e737;
+    padding: 5px;
+}
+#cabecera #logo{
+    width: 75px;
+    height: 50px;
+}
+
+#cabecera #titulo{
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+#barraUbicacion{
+    background-color: peachpuff;
+    color: black;
+}
+
+#barraMenu ul{
+    list-style: none;
+    display: flex;
+}
+
+#barraMenu ul li{
+    margin: 1%;
+    padding: 1%;
+}
+
+.boton{
+    background-color: blue;
+    color:rgb(8, 7, 7);
+    border:thin black solid;
+}
+
+.boton a{
+    text-decoration: none;
+    color:white;
+}
+
+.boton a:visited{
+    text-decoration: none;
+    color:white;
+}
+
+.boton a:hover{
+    background-color:cyan;
+    color: black;
+}
+
+.boton:hover{
+    background-color:cyan;
+    color: black;
+}
+
+.tabla{
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+    background-color: white;
+}
+
+.tabla th{
+    background-color: teal;
+    color: blue;
+}
+.tabla tr.par{
+    background-color: black;
+    color: white;
+    
+}
+
+.tabla tr.impar{
+    
+}
+
+#pie{
+    background-color: #81e714;
+    color: blue;
+    font-size: 1.5 em;
+    padding: 5px;
+}
+
+.for_texto{
+    border:blue thin solid;
+    background-color: white;
+    padding: 2px;
+    margin:2px;
+    border-radius: 4px;
+}
+.error{
+    background-color: white;
+    color:red;
+    border:thin solid red;
+    padding:5px;
+}
