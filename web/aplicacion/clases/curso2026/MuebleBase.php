@@ -5,6 +5,7 @@ require_once dirname(__FILE__) . "/../../scripts/librerias/validacion.php";
 
 abstract class MuebleBase
 {
+    private Caracteristicas $caracteristicas;
     const MAXIMO_MUEBLES = 100;
 
     private static int $mueblesCreados = 0;
@@ -57,6 +58,7 @@ abstract class MuebleBase
             $this->setPrecio(30);
         }
 
+        $this->caracteristicas = new Caracteristicas();
         self::$mueblesCreados++;
     }
 
@@ -205,15 +207,34 @@ abstract class MuebleBase
         return $numero > 0;
     }
 
-    public function __toString(): string
-    {
-        return "MUEBLE de clase " . static::class
-            . " con nombre " . $this->nombre
-            . ", fabricante " . $this->fabricante
-            . ", fabricado en " . $this->pais
-            . " a partir del año " . $this->anio
-            . ", vendido desde " . $this->fechaIniVenta
-            . " hasta " . $this->fechaFinVenta
-            . ", precio " . $this->precio;
+    // Metodos agregados despues de la creacion de la clase caracteristicas
+    // Recibe pares (nombre, valor). Si el numero de argumentos es impar, se desecha el ultimo
+public function anadirCaracteristicas(mixed ...$pares): void
+{
+    $total = count($pares);
+    for ($i = 0; $i + 1 < $total; $i += 2) {
+        $nombre = $pares[$i];
+        if (!is_string($nombre) || mb_trim($nombre) == "") {
+            throw new InvalidArgumentException("El nombre de la caracteristica debe ser una cadena no vacia");
+        }
+        $this->caracteristicas->$nombre = $pares[$i + 1];
     }
+}
+
+public function getCaracteristicas(): Caracteristicas
+{
+    return $this->caracteristicas;
+}
+
+    public function __toString(): string
+{
+    return "MUEBLE de clase " . static::class
+        . " con nombre " . $this->nombre
+        . ", fabricante " . $this->fabricante
+        . ", fabricado en " . $this->pais
+        . " a partir del año " . $this->anio
+        . ", vendido desde " . $this->fechaIniVenta
+        . " hasta " . $this->fechaFinVenta
+        . ", precio " . $this->precio
+        . ", caracteristicas [" . $this->caracteristicas . "]";
 }
