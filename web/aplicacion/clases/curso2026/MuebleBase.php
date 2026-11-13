@@ -1,8 +1,5 @@
 <?php
-
-// Ajusta la ruta a donde tengas \scripts\librerias
-require_once dirname(__FILE__) . "/../../scripts/librerias/validacion.php";
-
+include_once(dirname(__FILE__) . "/../../../scripts/librerias/validacion.php");
 abstract class MuebleBase
 {
     private Caracteristicas $caracteristicas;
@@ -237,4 +234,5 @@ public function getCaracteristicas(): Caracteristicas
         . " hasta " . $this->fechaFinVenta
         . ", precio " . $this->precio
         . ", caracteristicas [" . $this->caracteristicas . "]";
+}
 }

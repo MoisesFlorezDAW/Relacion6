@@ -2,8 +2,8 @@
 
 final class MuebleReciclado extends MuebleBase{
 
-    private int $porcentajeReciclado;
-    private function __construct(string $nombre,
+    private int $porcentajeReciclado = 10;
+    public function __construct(string $nombre,
         string $fabricante = "FaMu:",
         string $pais = "ESPAÑA",
         int $anio = 2020,

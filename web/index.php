@@ -5,10 +5,10 @@ include_once(dirname(__FILE__) . "/cabecera.php");
 $usuario=getenv("MYSQL_USER");
 
 //dibuja la plantilla de la vista
-inicioCabecera("tienda");
+inicioCabecera("Tienda Muebles");
 cabecera();
 finCabecera();
-inicioCuerpo("Tienda");
+inicioCuerpo("Tienda Muebles");
 cuerpo();  //llamo a la vista
 finCuerpo();
 // **********************************************************
@@ -20,6 +20,7 @@ function cabecera()
 //vista
 function cuerpo()
 {
+
 ?>
 <?php
 }

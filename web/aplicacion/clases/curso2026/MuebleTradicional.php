@@ -4,7 +4,7 @@ final class MuebleTradicional extends MuebleBase{
     private float $peso;
     private string $serie;
 
-    private function __construct(string $nombre,
+    public function __construct(string $nombre,
         string $fabricante = "FaMu:",
         string $pais = "ESPAÑA",
         int $anio = 2020,

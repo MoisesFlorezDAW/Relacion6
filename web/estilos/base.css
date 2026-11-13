@@ -114,3 +114,61 @@ body {
     border:thin solid red;
     padding:5px;
 }
+
+/***Estilo para la tabla y botones**/
+
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    thead th {
+        background-color: #4f5458;
+        color: #ffffff;
+        padding: 12px 10px;
+        text-align: left;
+    }
+
+    tbody td {
+        padding: 10px;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    /* Filas alternas */
+    tbody tr:nth-child(even) {
+        background-color: #f4f6f8;
+    }
+
+    /* Resaltado al pasar el raton */
+    tbody tr:hover {
+        background-color: #dce8f5;
+        cursor: pointer;
+    }
+
+    /* Indice centrado y estrecho */
+    th:first-child,
+    td:first-child {
+        width: 70px;
+        text-align: center;
+    }
+
+    /* Botones */
+    input {
+        margin: 5px 5px;
+        padding: 8px 8px;
+        background-color: #4f5458;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    input {
+        background-color: #43494e;
+    }

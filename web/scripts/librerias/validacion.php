@@ -1,5 +1,27 @@
 <?php
 
+require_once dirname(__FILE__) . "../../../aplicacion/clases/curso2026/MuebleBase.php";
+require_once dirname(__FILE__) . "../../../aplicacion/clases/curso2026/MuebleReciclado.php";
+require_once dirname(__FILE__) . "../../../aplicacion/clases/curso2026/MuebleTradicional.php";
+require_once dirname(__FILE__) . "../../../aplicacion/clases/curso2026/Caracteristicas.php";
+
+$muebles = [];
+
+$muebles[1] = new MuebleReciclado("Sillon azul", "Ecoliving", "Portugal", 2022, "01/02/2022", "31/12/2035", 120.5, 75);
+$muebles[1]->anadirCaracteristicas("color", "azul", "material", "plastico reciclado", "plegable", true);
+
+$muebles[2] = new MuebleTradicional("Armario roble", "Maderas", "Francia", 2021, "01/01/2021", "31/12/2040", 400, 120.5, "S09");
+$muebles[2]->anadirCaracteristicas("color", "marron", "material", "roble", "puertas", 3);
+
+$muebles[3] = new MuebleReciclado("Mesa eco", "Reutiliza", "ESPAÑA", 2023, "15/03/2023", "31/12/2038", 85, 90);
+$muebles[3]->anadirCaracteristicas("alto", 75, "ancho", 120, "extensible", false);
+
+$muebles[4] = new MuebleTradicional("Cama nordica", "Nordik", "Suecia", 2020, "01/06/2020", "31/12/2040", 350, 60, "S02");
+$muebles[4]->anadirCaracteristicas("color", "blanco", "colchon incluido", false, "ancho", 150);
+
+$muebles[5] = new MuebleTradicional("Estanteria clasica", "Maderas", "ESPAÑA", 2024, "01/01/2024", "31/12/2040", 150, 40.5, "S05");
+$muebles[5]->anadirCaracteristicas("baldas", 5, "material", "pino", "montaje", "facil");
+
 function validaEntero(int &$var, int $min, int $max, int $defecto): bool {
     $r = filter_var($var, FILTER_VALIDATE_INT,
         ['options' => ['min_range' => $min, 'max_range' => $max]]);
